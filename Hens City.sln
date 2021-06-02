@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{1B694EAA-5B17-4B89-AEF3-F847877FAC0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Febucci.HierarchyIcons.Examples", "Febucci.HierarchyIcons.Examples.csproj", "{FFD0DE55-91AD-F659-488F-1D6917EA974D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Febucci.HierarchyIcons", "Febucci.HierarchyIcons.csproj", "{048833CB-3E20-437C-AE68-E15792E0253B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B694EAA-5B17-4B89-AEF3-F847877FAC0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B694EAA-5B17-4B89-AEF3-F847877FAC0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B694EAA-5B17-4B89-AEF3-F847877FAC0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B694EAA-5B17-4B89-AEF3-F847877FAC0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFD0DE55-91AD-F659-488F-1D6917EA974D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFD0DE55-91AD-F659-488F-1D6917EA974D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFD0DE55-91AD-F659-488F-1D6917EA974D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFD0DE55-91AD-F659-488F-1D6917EA974D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{048833CB-3E20-437C-AE68-E15792E0253B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{048833CB-3E20-437C-AE68-E15792E0253B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{048833CB-3E20-437C-AE68-E15792E0253B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{048833CB-3E20-437C-AE68-E15792E0253B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
