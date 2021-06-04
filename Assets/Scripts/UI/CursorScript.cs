@@ -39,4 +39,14 @@ public class CursorScript : MonoBehaviour
     {
         return cursorPrefab.transform.position;
     }
+
+    public void Enable()
+    {
+        cursorPrefab.SetActive(true);
+    }
+
+    public void Disable()
+    {
+        cursorPrefab.SetActive(false);
+    }
 }

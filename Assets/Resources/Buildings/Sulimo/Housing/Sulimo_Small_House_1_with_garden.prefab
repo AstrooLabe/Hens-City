@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3729073647240887031}
   - component: {fileID: 7339438012389245740}
   - component: {fileID: -2291965652246309296}
+  - component: {fileID: -2313089818770503011}
   m_Layer: 0
   m_Name: Sulimo_Small_House_1_with_garden
   m_TagString: PlacedAsset
@@ -3874,6 +3875,24 @@ MonoBehaviour:
     - {x: -0.57735026, y: 0.57735026, z: 0.57735026}
     - {x: 0.57735026, y: 0.57735026, z: 0.57735026}
     - {x: 0.57735026, y: 0.57735026, z: -0.57735026}
+--- !u!114 &-2313089818770503011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731045601981822855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c5e3bde8463b60478dd6da25fc0c8db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 2
+  x: 2
+  y: 1.5
+  z: 2
+  buildingName: Sulimo_Small_House_1_with_garden
+  outline: {fileID: -2291965652246309296}
 --- !u!1001 &1149352323964132245
 PrefabInstance:
   m_ObjectHideFlags: 0

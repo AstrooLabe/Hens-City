@@ -4836,7 +4836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be12dc8f538c987438856479327f05af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorPrefab: {fileID: 1952950175201343696, guid: 19546a124b35be3468332aaf00bfa219,
+  cursorPrefab: {fileID: 4452967807959578431, guid: 17bb091697dbb1542a1c4ffa11203136,
     type: 3}
 --- !u!114 &1806895758
 MonoBehaviour:

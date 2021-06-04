@@ -59,6 +59,7 @@ public class AssetPlacer : MonoBehaviour
             DestroyImmediate(instantiatedBuilding.gameObject, true);
             buildingPositionOffset = Vector3.zero;
             isABuildingSelected = false;
+            FindObjectOfType<CursorScript>().Disable();
         }
     }
 
@@ -351,6 +352,7 @@ public class AssetPlacer : MonoBehaviour
 
         if (cursor)
         {
+            cursor.Enable();
             Vector3 finalPosition = new Vector3(cursor.GetPosition().x, 0, cursor.GetPosition().z);
             instantiatedBuilding.transform.position = finalPosition;
         }

@@ -79,7 +79,7 @@ public class CameraPlayer : MonoBehaviour
 
         MoveCamera(horizontalInput, verticalInput);
 
-        if (verticalInput > 0 || verticalInput < -0 || horizontalInput > 0 || horizontalInput < -0)
+        if (verticalInput != 0 || horizontalInput != 0)
         {
             return true;
         }
