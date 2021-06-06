@@ -18,3 +18,8 @@ public class Cities : MonoBehaviour
     public const string WILWAR = "Wilwar";
     public const string ANAR = "Anar";
 }
+
+public class Dimensions : MonoBehaviour
+{
+    public const int pointEspacement = 4;
+}

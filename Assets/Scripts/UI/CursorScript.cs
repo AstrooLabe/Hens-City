@@ -40,13 +40,20 @@ public class CursorScript : MonoBehaviour
         return cursorPrefab.transform.position;
     }
 
-    public void Enable()
+    public void RotateCursor(int angle)
+    {
+        cursorPrefab.transform.localRotation = Quaternion.Euler(0, angle, 0);
+    }
+
+    public void Enable(int x, int z)
     {
         cursorPrefab.SetActive(true);
+        cursorPrefab.GetComponent<CursorAnimation>().SetCursorSizeToAsset(x, z);
     }
 
     public void Disable()
     {
+        cursorPrefab.GetComponent<CursorAnimation>().ResetCursor();
         cursorPrefab.SetActive(false);
     }
 }

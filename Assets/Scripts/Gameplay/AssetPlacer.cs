@@ -50,6 +50,7 @@ public class AssetPlacer : MonoBehaviour
         instantiatedBuilding.transform.localRotation = Quaternion.Euler(0, objectRotation, 0);
         instantiatedBuilding.GetComponent<GenericBuilding>().SetRotation(objectRotation);
         instantiatedBuilding.transform.localPosition = FindObjectOfType<CursorScript>().GetPosition() + buildingPositionOffset;
+        FindObjectOfType<CursorScript>().RotateCursor(objectRotation);
     }
 
     public void DisablePlacementMode(bool hasCameraMoved)
@@ -352,7 +353,7 @@ public class AssetPlacer : MonoBehaviour
 
         if (cursor)
         {
-            cursor.Enable();
+            cursor.Enable(newBuilding.x, newBuilding.z);
             Vector3 finalPosition = new Vector3(cursor.GetPosition().x, 0, cursor.GetPosition().z);
             instantiatedBuilding.transform.position = finalPosition;
         }
