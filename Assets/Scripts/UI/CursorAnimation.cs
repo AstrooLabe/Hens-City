@@ -12,10 +12,13 @@ public class CursorAnimation : MonoBehaviour
     GameObject cursorLeft;
     [SerializeField]
     GameObject cursorRight;
+    [SerializeField]
+    GameObject cursorHolder;
 
     public void ResetCursor()
     {
-        gameObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        cursorHolder.transform.localPosition = Vector3.zero;
+        cursorHolder.transform.localRotation = Quaternion.Euler(0, 0, 0);
         SetPositionAndScale(cursorUp, Vector3.zero, 1);
         SetPositionAndScale(cursorDown, Vector3.zero, 1);
         SetPositionAndScale(cursorLeft, Vector3.zero, 1);
@@ -32,6 +35,13 @@ public class CursorAnimation : MonoBehaviour
         SetPositionAndScale(cursorUp, new Vector3(adjustedX / 2 - 2, 0, adjustedZ - Dimensions.pointEspacement), x);
         SetPositionAndScale(cursorLeft, new Vector3(0, 0, adjustedZ / 2 - 2), z);
         SetPositionAndScale(cursorRight, new Vector3(adjustedX - Dimensions.pointEspacement, 0, adjustedZ / 2 - 2), z);
+    }
+
+    public void RotateCursor(int angle, Vector3 offset)
+    {
+        cursorHolder.transform.localRotation = Quaternion.Euler(0, angle, 0);
+        cursorHolder.transform.localPosition = Vector3.zero;
+        cursorHolder.transform.localPosition += offset;
     }
 
     private void SetPositionAndScale(GameObject cursorPart, Vector3 pos, int scale)

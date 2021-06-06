@@ -40,9 +40,9 @@ public class CursorScript : MonoBehaviour
         return cursorPrefab.transform.position;
     }
 
-    public void RotateCursor(int angle)
+    public void RotateCursor(int angle, Vector3 offsetVector)
     {
-        cursorPrefab.transform.localRotation = Quaternion.Euler(0, angle, 0);
+        cursorPrefab.GetComponent<CursorAnimation>().RotateCursor(angle, offsetVector);
     }
 
     public void Enable(int x, int z)
@@ -55,5 +55,10 @@ public class CursorScript : MonoBehaviour
     {
         cursorPrefab.GetComponent<CursorAnimation>().ResetCursor();
         cursorPrefab.SetActive(false);
+    }
+
+    public void ResetCursor()
+    {
+        cursorPrefab.GetComponent<CursorAnimation>().ResetCursor();
     }
 }

@@ -50,7 +50,7 @@ public class AssetPlacer : MonoBehaviour
         instantiatedBuilding.transform.localRotation = Quaternion.Euler(0, objectRotation, 0);
         instantiatedBuilding.GetComponent<GenericBuilding>().SetRotation(objectRotation);
         instantiatedBuilding.transform.localPosition = FindObjectOfType<CursorScript>().GetPosition() + buildingPositionOffset;
-        FindObjectOfType<CursorScript>().RotateCursor(objectRotation);
+        FindObjectOfType<CursorScript>().RotateCursor(objectRotation, newOffsetVector);
     }
 
     public void DisablePlacementMode(bool hasCameraMoved)
@@ -324,6 +324,8 @@ public class AssetPlacer : MonoBehaviour
 
     public void SetBuilding(GenericBuildingObject newBuilding)
     {
+        CursorScript cursor = FindObjectOfType<CursorScript>();
+
         if (selectedBuilding)
         {
             if (selectedBuilding.GetComponent<GenericBuilding>().GetBuildingType() == Categories.ROADS)
@@ -336,9 +338,10 @@ public class AssetPlacer : MonoBehaviour
                 StopCoroutine("PlaceInstantiatedBuilding");
             }
             DestroyImmediate(instantiatedBuilding.gameObject, true);
+            cursor.ResetCursor();
         }
+
         buildingPositionOffset = Vector3.zero;
-        CursorScript cursor = FindObjectOfType<CursorScript>();
 
         selectedBuilding = Resources.Load<GameObject>("Buildings/" + newBuilding.city + "/" + newBuilding.category + "/" + newBuilding.buildingPrefabName);
         instantiatedBuilding = Instantiate(selectedBuilding, Vector3.zero, Quaternion.identity);
@@ -357,6 +360,7 @@ public class AssetPlacer : MonoBehaviour
             Vector3 finalPosition = new Vector3(cursor.GetPosition().x, 0, cursor.GetPosition().z);
             instantiatedBuilding.transform.position = finalPosition;
         }
+
         isABuildingSelected = true;
 
         if (selectedBuilding.GetComponent<GenericBuilding>().GetBuildingType() == Categories.ROADS)
