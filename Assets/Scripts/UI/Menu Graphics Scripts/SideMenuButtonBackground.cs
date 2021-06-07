@@ -7,7 +7,7 @@ public class SideMenuButtonBackground : MonoBehaviour
     [SerializeField]
     RectTransform imageHolder;
 
-    private readonly float speed = 10f/60f;
+    private readonly float speed = 10f/120f;
     private Vector2 originalSize;
     private Vector2 extendedSize;
     private bool goneUp = false;
