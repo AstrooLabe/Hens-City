@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using MoreMountains.Feedbacks;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -12,6 +13,8 @@ public class AssetPlacer : MonoBehaviour
     private Vector3 buildingPositionOffset;
     [SerializeField]
     private GameObject buildingGrid;
+    [SerializeField]
+    private MMFeedbacks feedbacks;
     private bool isABuildingSelected = false;
 
     private Vector3 translationVelo = new Vector3(0, 0, 0);
@@ -82,6 +85,7 @@ public class AssetPlacer : MonoBehaviour
 
                 if (grid.IsRangeConstructible(indexPositionX, indexPositionZ, genericSelectedBuilding.GetX(), genericSelectedBuilding.GetZ(), gameObjectRotation))
                 {
+                    feedbacks.PlayFeedbacks();
                     GameObject newBuilding = Instantiate(selectedBuilding, Vector3.zero, Quaternion.identity);
                     newBuilding.transform.localRotation = Quaternion.Euler(0, gameObjectRotation, 0);
                     newBuilding.GetComponent<GenericBuilding>().SetRotation(instantiatedBuilding.GetComponent<GenericBuilding>().GetRotation());
@@ -103,7 +107,6 @@ public class AssetPlacer : MonoBehaviour
 
     IEnumerator PlaceInstantiatedRoad()
     {
-
         while (isABuildingSelected)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -208,31 +211,7 @@ public class AssetPlacer : MonoBehaviour
 
                 instantiatedBuilding.GetComponent<GenericBuilding>().SetHighlightWhite();
                 roadsToDisplay.ForEach(road => { DestroyImmediate(road); });
-
-                //GenericBuilding genericSelectedBuilding = selectedBuilding.GetComponent<GenericBuilding>();
-                //int gameObjectRotation = (int)selectedBuilding.transform.localRotation.eulerAngles.y;
-                //Vector3 finalPosition = grid.GetNearestPointOnGrid(hitInfo.point);
-                //finalPosition = new Vector3(finalPosition.x, 0, finalPosition.z) + buildingPositionOffset;
-                //int indexPositionX = CalculateIndexOfGridPosition((int)finalPosition.x);
-                //int indexPositionZ = CalculateIndexOfGridPosition((int)finalPosition.z);
-
-                //if (grid.IsRangeConstructible(indexPositionX, indexPositionZ, genericSelectedBuilding.GetX(), genericSelectedBuilding.GetZ(), gameObjectRotation))
-                //{
-                //    selectedBuilding.GetComponent<GenericBuilding>().SetHighlightOff();
-                //    GameObject newBuilding = Instantiate(selectedBuilding, Vector3.zero, Quaternion.identity);
-                //    newBuilding.transform.localRotation = Quaternion.Euler(0, gameObjectRotation, 0);
-                //    newBuilding.GetComponent<GenericBuilding>().SetRotation(selectedBuilding.GetComponent<GenericBuilding>().GetRotation());
-                //    newBuilding.transform.SetParent(buildingGrid.transform);
-                //    newBuilding.layer = 0;
-                //    newBuilding.transform.position = finalPosition;
-                //    grid.AddToList(newBuilding.GetComponent<GenericBuilding>(), indexPositionX, indexPositionZ, false);
-                //}
             }
-
-            //if (Input.GetButtonUp("Rotate Clockwise"))
-            //{
-            //    RotateSelectedBuildingClockwise();
-            //}
 
             yield return null;
         }

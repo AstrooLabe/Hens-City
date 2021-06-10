@@ -7,7 +7,7 @@ public class SideMenuButtonBackground : MonoBehaviour
     [SerializeField]
     RectTransform imageHolder;
 
-    private readonly float speed = 10f/120f;
+    private readonly float speed = 10f/30f;
     private Vector2 originalSize;
     private Vector2 extendedSize;
     private bool goneUp = false;
@@ -21,11 +21,6 @@ public class SideMenuButtonBackground : MonoBehaviour
         originalSize = GetComponent<RectTransform>().sizeDelta;
         extendedSize = new Vector2(originalSize.x, originalSize.y + extend);
         half = originalSize.y / 2f;
-    }
-
-    void Update()
-    {
-
     }
 
     public void SetVisible(bool value)

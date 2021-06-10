@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7056983904472114090}
   - component: {fileID: 1848105843275896486}
   - component: {fileID: 4386221935638775111}
+  - component: {fileID: 7474969400681888446}
   m_Layer: 0
   m_Name: Sulimo_Tower
   m_TagString: PlacedAsset
@@ -26652,6 +26653,24 @@ MonoBehaviour:
     - {x: -0.08238423, y: -0.99318945, z: 0.08238688}
     - {x: -0.08238423, y: -0.99318945, z: -0.08238667}
     - {x: 0.08238434, y: -0.99318945, z: -0.08238667}
+--- !u!114 &7474969400681888446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8189470098937790406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c5e3bde8463b60478dd6da25fc0c8db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 8
+  x: 5
+  y: 73
+  z: 6
+  buildingName: Sulimo_Tower
+  outline: {fileID: 4386221935638775111}
 --- !u!1001 &2638143901942043545
 PrefabInstance:
   m_ObjectHideFlags: 0
