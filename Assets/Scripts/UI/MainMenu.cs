@@ -7,6 +7,8 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField]
     private GameObject quitGameButton;
+    [SerializeField]
+    private GameObject optionsMenu;
     private Transform noSavePopup;
 
     void Awake()
@@ -37,6 +39,11 @@ public class MainMenu : MonoBehaviour
             noSavePopup.gameObject.SetActive(true);
             quitGameButton.GetComponent<Button>().interactable = false;
         }
+    }
+
+    public void OpenOptions()
+    {
+        optionsMenu.SetActive(true);
     }
 
     public void QuitGame()
