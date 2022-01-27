@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4901670932987434804
+--- !u!114 &-3047323790385042033
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: beta_island_material
-  m_Shader: {fileID: -6465566751694194690, guid: 018e2366ecff5d54db34b4ef5ce301da,
+  m_Name: beta_island_material_ground
+  m_Shader: {fileID: -6465566751694194690, guid: a9159642b022e3246acab3ca45ad6626,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -73,16 +73,28 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_534e9d90992c4de2819f017440436ac6_Texture_1:
-        m_Texture: {fileID: 2800000, guid: 9bf09adf6720b084db79ba157ca14463, type: 3}
+    - _SampleTexture2D_6e4ef1ba008843358d1176c7f1730063_Texture_1:
+        m_Texture: {fileID: 2800000, guid: a1ec7b18e2214d1428eaec9ad94b3d22, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_dfb089b9ea354d0c82e4d6e14875000f_Texture_1:
-        m_Texture: {fileID: 2800000, guid: 14fd0cd414427244bae4b67bf70f02fd, type: 3}
+    - _SampleTexture2D_b9f2df4f1c2841debe5e94d59a7107f7_Texture_1:
+        m_Texture: {fileID: 2800000, guid: a1ec7b18e2214d1428eaec9ad94b3d22, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_ce64ec65562c44ccb3f4374aef209bb8_Texture_1:
+        m_Texture: {fileID: 2800000, guid: a1ec7b18e2214d1428eaec9ad94b3d22, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Triplanar_90e3f8b946f749b299f48dd8b8635453_Texture_1:
+        m_Texture: {fileID: 2800000, guid: a1ec7b18e2214d1428eaec9ad94b3d22, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Triplanar_918f19626bad4b35aedd3bc90656df50_Texture_1:
+        m_Texture: {fileID: 2800000, guid: a1ec7b18e2214d1428eaec9ad94b3d22, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -99,9 +111,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Metallic: 0.28
-    - Smoothness: 1
-    - TEST: 0
+    - Metallic: 0
+    - Smoothness: 0
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -129,10 +140,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Sand_BaseColor: {r: 1, g: 0.6745098, b: 0, a: 0}
-    - Sand_GradientColor: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.5, g: 0.5, b: 0.08431373, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []

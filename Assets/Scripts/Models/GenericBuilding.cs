@@ -118,7 +118,8 @@ public class GenericBuilding : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if (outline.enabled) outline.enabled = false;
+        if (outline != null)
+            if (outline.enabled) outline.enabled = false;
     }
 
     public void SetHighlightWhite()

@@ -272,7 +272,7 @@ public class AssetPlacer : MonoBehaviour
 
     private int CalculateIndexOfGridPosition(int position)
     {
-        return position / grid.GetPointEspacement() + grid.GetGridSize() / 2;
+        return (position - 2) / grid.GetPointEspacement() + (grid.GetGridSize()) / 2;
     }
 
     private IEnumerator PlaceDisplayedBuildingNear()
