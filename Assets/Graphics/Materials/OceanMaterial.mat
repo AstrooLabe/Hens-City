@@ -23,7 +23,7 @@ Material:
   m_Name: OceanMaterial
   m_Shader: {fileID: 4800000, guid: efcaf526ceb1f4efd9eb4e4c30c6ade6, type: 3}
   m_ShaderKeywords: _ALPHATEST_ON _COLORMODE_LINEAR _FOAMMODE_GRADIENT_NOISE _OPAQUE_OFF
-    _SPECULAR_SETUP _WAVEMODE_ROUND
+    _SPECULAR_SETUP _WAVEMODE_GRID
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -110,16 +110,16 @@ Material:
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _ColorMode: 0
-    - _CrestSharpness: 0.1
-    - _CrestSize: 0.1
+    - _CrestSharpness: 0
+    - _CrestSize: 0.079
     - _Cull: 2
     - _Cutoff: 1
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _FadeDistance: 0.5
-    - _FoamAmount: 0.25
+    - _FadeDistance: 1
+    - _FoamAmount: 0.28
     - _FoamDepth: 0.5
     - _FoamDirection: 0
     - _FoamMode: 1
@@ -141,8 +141,8 @@ Material:
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RefractionAmplitude: 0.01
-    - _RefractionFrequency: 35
+    - _RefractionAmplitude: 0.0216
+    - _RefractionFrequency: 37.97
     - _RefractionScale: 1
     - _RefractionSpeed: 0.1
     - _ShadowStrength: 0.35
@@ -157,12 +157,12 @@ Material:
     - _UVSec: 0
     - _WaterClearness: 0.3
     - _WaterDepth: 5
-    - _WaveAmplitude: 0.25
-    - _WaveDirection: 0
+    - _WaveAmplitude: 0.89
+    - _WaveDirection: 0.59
     - _WaveFrequency: 1
-    - _WaveMode: 1
-    - _WaveNoise: 0.25
-    - _WaveSpeed: 0.5
+    - _WaveMode: 2
+    - _WaveNoise: 0.558
+    - _WaveSpeed: 0.39
     - _WorkflowMode: 0
     - _ZWrite: 0
     m_Colors:
