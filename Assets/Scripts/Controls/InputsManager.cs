@@ -3,7 +3,7 @@
 public class InputsManager : MonoBehaviour
 {
     [SerializeField]
-    private CameraPlayer camera;
+    private CameraPlayer cameraP;
     [SerializeField]
     private AssetPlacer placer;
     [SerializeField]
@@ -31,14 +31,14 @@ public class InputsManager : MonoBehaviour
 
         if (!Input.GetButton("Alt Camera Move"))
         {
-            camera.MoveCameraWithKeysOrRotate();
+            cameraP.MoveCameraWithKeysOrRotate();
         }
         else if (Input.GetButton("Alt Camera Move"))
         {
             if(hasCameraMoved)
-                camera.MoveCameraWithMouse();
+                cameraP.MoveCameraWithMouse();
             else
-                hasCameraMoved = camera.MoveCameraWithMouse();
+                hasCameraMoved = cameraP.MoveCameraWithMouse();
         }
 
         if (Input.GetButtonUp("Alt Camera Move") && !Input.GetMouseButton(0))

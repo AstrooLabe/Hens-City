@@ -10,6 +10,7 @@ public class BottomMenuButtonV2 : MonoBehaviour, IPointerEnterHandler, IPointerE
     private GameObject displayedBuilding;
     [SerializeField]
     private Image buttonBackground;
+    private GameObject infoPanel;
 
     void Start()
     {
@@ -20,6 +21,11 @@ public class BottomMenuButtonV2 : MonoBehaviour, IPointerEnterHandler, IPointerE
     {
         if (displayedBuilding != null)
             displayedBuilding.transform.Rotate(0, 30f * Time.deltaTime, 0);
+    }
+
+    public void SetInfoPanel(GameObject infoPanel)
+    {
+        this.infoPanel = infoPanel;
     }
 
     public void SetAssignedBuilding(GenericBuildingObject newAssignedBuilding)
@@ -50,11 +56,25 @@ public class BottomMenuButtonV2 : MonoBehaviour, IPointerEnterHandler, IPointerE
     {
         FindObjectOfType<InputsManager>().isCursorOnButton = true;
         buttonBackground.color = new Color(1, 1, 1, 1);
+        this.DisplayInfoPanel();
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         FindObjectOfType<InputsManager>().isCursorOnButton = false;
         buttonBackground.color = new Color(1, 1, 1, 0);
+        EmptyAndHideInfoPanel();
+    }
+
+    private void DisplayInfoPanel()
+    {
+        infoPanel.SetActive(true);
+
+    }
+
+    private void EmptyAndHideInfoPanel()
+    {
+        infoPanel.SetActive(false);
+
     }
 }

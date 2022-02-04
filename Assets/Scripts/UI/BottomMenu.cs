@@ -5,7 +5,9 @@ using UnityEngine.UI;
 public class BottomMenu : MonoBehaviour
 {
     [SerializeField]
-    private GameObject ButtonPrefab;
+    private GameObject buttonPrefab;
+    [SerializeField]
+    private GameObject infoPanel;
     private string category = "";
     private string city = Cities.SULIMO;
     private List<GenericBuildingObject> objects = new List<GenericBuildingObject>();
@@ -51,11 +53,12 @@ public class BottomMenu : MonoBehaviour
 
         for (int i = 0; i < nbButtons; i++)
         {
-            buttons[i] = Instantiate(ButtonPrefab);
+            buttons[i] = Instantiate(buttonPrefab);
             buttons[i].transform.SetParent(transform, false);
             buttons[i].transform.localPosition = new Vector3(-120 + (80 * i), -13.5f);
             string imgPath = "Buildings/" + city + "/" + category + "/Images/" + objects[positionInArray + i].buildingPrefabName;
             buttons[i].SendMessage("SetAssignedBuilding", objects[positionInArray + i]);
+            buttons[i].SendMessage("SetInfoPanel", infoPanel);
         }
     }
 
