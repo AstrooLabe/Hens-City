@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 4051689595698226692}
   - component: {fileID: -1715765550182769472}
   - component: {fileID: 2334785025183750879}
+  - component: {fileID: 3745794307728078864}
+  - component: {fileID: -7534334364438355147}
+  - component: {fileID: -116078354388270021}
   m_Layer: 0
   m_Name: Sulimo_Small_Shop_1
   m_TagString: PlacedAsset
@@ -7087,6 +7090,60 @@ MonoBehaviour:
   buildingName: Sulimo_Small_Shop_1
   outline: {fileID: 4051689595698226692}
 --- !u!114 &2334785025183750879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16892491113685787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c5e3bde8463b60478dd6da25fc0c8db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  x: 0
+  y: 0
+  z: 0
+  buildingName: 
+  outline: {fileID: 0}
+--- !u!114 &3745794307728078864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16892491113685787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c5e3bde8463b60478dd6da25fc0c8db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  x: 0
+  y: 0
+  z: 0
+  buildingName: 
+  outline: {fileID: 0}
+--- !u!114 &-7534334364438355147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16892491113685787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c5e3bde8463b60478dd6da25fc0c8db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  x: 0
+  y: 0
+  z: 0
+  buildingName: 
+  outline: {fileID: 0}
+--- !u!114 &-116078354388270021
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

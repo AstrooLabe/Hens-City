@@ -1,0 +1,169 @@
+{
+    "uiBuildingList": [
+        {
+            "id": 0,
+            "x": 0,
+            "z": 0,
+            "buildingPrefabName": "_UI",
+            "displayedName": "",
+            "description": "Lorem ipsum cogito ergo sum, I dunno, I don't speak greek...",
+            "specialEvents": false,
+            "category": "",
+            "city": ""
+        },
+        {
+            "id": 1,
+            "x": 2,
+            "z": 1,
+            "buildingPrefabName": "Sulimo_Small_House_1_UI",
+            "displayedName": "Small house",
+            "description": "Lorem ipsum cogito ergo sum, I dunno, I don't speak greek...",
+            "specialEvents": false,
+            "category": "Housing",
+            "city": "Sulimo"
+        },
+        {
+            "id": 2,
+            "x": 2,
+            "z": 2,
+            "buildingPrefabName": "Sulimo_Small_House_1_with_garden_UI",
+            "displayedName": "Small house with garden",
+            "description": "Lorem ipsum cogito ergo sum, I dunno, I don't speak greek...",
+            "specialEvents": false,
+            "category": "Housing",
+            "city": "Sulimo"
+        },
+        {
+            "id": 3,
+            "x": 1,
+            "z": 1,
+            "buildingPrefabName": "Sulimo_Paved_Road_UI",
+            "displayedName": "Paved road",
+            "description": "Lorem ipsum cogito ergo sum, I dunno, I don't speak greek...",
+            "specialEvents": false,
+            "category": "Roads",
+            "city": "Sulimo"
+        },
+        {
+            "id": 4,
+            "x": 3,
+            "z": 4,
+            "buildingPrefabName": "Sulimo_Observatory_UI",
+            "displayedName": "Observatory",
+            "description": "Lorem ipsum cogito ergo sum, I dunno, I don't speak greek...",
+            "specialEvents": false,
+            "category": "SpecialBuildings",
+            "city": "Sulimo"
+        },
+        {
+            "id": 5,
+            "x": 1,
+            "z": 2,
+            "buildingPrefabName": "Sulimo_Small_Shop_1_UI",
+            "displayedName": "Small shop",
+            "description": "Lorem ipsum cogito ergo sum, I dunno, I don't speak greek...",
+            "specialEvents": false,
+            "category": "Shops",
+            "city": "Sulimo"
+        },
+        {
+            "id": 6,
+            "x": 1,
+            "z": 1,
+            "buildingPrefabName": "Birch1_UI",
+            "displayedName": "Birch",
+            "description": "Lorem ipsum cogito ergo sum, I dunno, I don't speak greek...",
+            "specialEvents": false,
+            "category": "Vegetation",
+            "city": "Sulimo"
+        },
+        {
+            "id": 7,
+            "x": 1,
+            "z": 1,
+            "buildingPrefabName": "Fir1_UI",
+            "displayedName": "Fir",
+            "description": "Lorem ipsum cogito ergo sum, I dunno, I don't speak greek...",
+            "specialEvents": false,
+            "category": "Vegetation",
+            "city": "Sulimo"
+        },
+        {
+            "id": 8,
+            "x": 5,
+            "z": 6,
+            "buildingPrefabName": "Sulimo_Tower_UI",
+            "displayedName": "Tower",
+            "description": "Lorem ipsum cogito ergo sum, I dunno, I don't speak greek...",
+            "specialEvents": false,
+            "category": "SpecialBuildings",
+            "city": "Sulimo"
+        },
+        {
+            "id": 9,
+            "x": 1,
+            "z": 1,
+            "buildingPrefabName": "Sulimo_Tall_House_1_UI",
+            "displayedName": "Tall house",
+            "description": "Lorem ipsum cogito ergo sum, I dunno, I don't speak greek...",
+            "specialEvents": false,
+            "category": "Housing",
+            "city": "Sulimo"
+        },
+        {
+            "id": 10,
+            "x": 2,
+            "z": 1,
+            "buildingPrefabName": "Sulimo_Tall_House_1_with_garden_UI",
+            "displayedName": "Tall house with garden",
+            "description": "Lorem ipsum cogito ergo sum, I dunno, I don't speak greek...",
+            "specialEvents": false,
+            "category": "Housing",
+            "city": "Sulimo"
+        },
+        {
+            "id": 11,
+            "x": 3,
+            "z": 4,
+            "buildingPrefabName": "Sulimo_Domain_UI",
+            "displayedName": "Domain",
+            "description": "Lorem ipsum cogito ergo sum, I dunno, I don't speak greek...",
+            "specialEvents": false,
+            "category": "SpecialBuildings",
+            "city": "Sulimo"
+        },
+        {
+            "id": 12,
+            "x": 2,
+            "z": 2,
+            "buildingPrefabName": "Sulimo_Large_Shop_1_UI",
+            "displayedName": "Large shop",
+            "description": "Lorem ipsum cogito ergo sum, I dunno, I don't speak greek...",
+            "specialEvents": false,
+            "category": "Shops",
+            "city": "Sulimo"
+        },
+        {
+            "id": 13,
+            "x": 3,
+            "z": 3,
+            "buildingPrefabName": "Sulimo_Domain_Place_UI",
+            "displayedName": "Domain's place",
+            "description": "Lorem ipsum cogito ergo sum, I dunno, I don't speak greek...",
+            "specialEvents": false,
+            "category": "SpecialBuildings",
+            "city": "Sulimo"
+        },
+        {
+            "id": 14,
+            "x": 4,
+            "z": 4,
+            "buildingPrefabName": "Sulimo_Tavern_UI",
+            "displayedName": "Tavern",
+            "description": "Lorem ipsum cogito ergo sum, I dunno, I don't speak greek...",
+            "specialEvents": false,
+            "category": "SpecialBuildings",
+            "city": "Sulimo"
+        }
+    ]
+}

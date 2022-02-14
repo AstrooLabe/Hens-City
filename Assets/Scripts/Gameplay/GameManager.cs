@@ -7,10 +7,14 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     public BuildingListObject buildingsDatabase = new BuildingListObject();
+    [SerializeField]
+    public UIBuildingListObject uiBuildingsDatabase = new UIBuildingListObject();
 
     void Start()
     {
+        Application.targetFrameRate = 60;
         buildingsDatabase = JsonUtility.FromJson<BuildingListObject>(Resources.Load<TextAsset>("JSON_Data/BuildingList").text);
+        uiBuildingsDatabase = JsonUtility.FromJson<UIBuildingListObject>(Resources.Load<TextAsset>("JSON_Data/UIBuildingList").text);
 
     }
 

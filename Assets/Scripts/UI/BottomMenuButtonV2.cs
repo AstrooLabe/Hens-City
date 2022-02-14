@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class BottomMenuButtonV2 : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     private GenericBuildingObject assignedBuilding;
+    private UIBuildingObject uiAssignedBuilding;
 
     [SerializeField]
     private GameObject displayedBuilding;
@@ -31,10 +32,11 @@ public class BottomMenuButtonV2 : MonoBehaviour, IPointerEnterHandler, IPointerE
     public void SetAssignedBuilding(GenericBuildingObject newAssignedBuilding)
     {
         assignedBuilding = newAssignedBuilding;
-        SetDisplayedBuilding(assignedBuilding.buildingName);
+        uiAssignedBuilding = FindObjectOfType<GameManager>().uiBuildingsDatabase.getBuildingById(newAssignedBuilding.id);
+        SetDisplayedBuilding();
     }
 
-    private void SetDisplayedBuilding(string buildingName)
+    private void SetDisplayedBuilding()
     {
         displayedBuilding = Resources.Load<GameObject>("UI/" + assignedBuilding.city + "/" + assignedBuilding.category + "/" + assignedBuilding.buildingPrefabName + "_UI");
         Vector3 finalScale = displayedBuilding.transform.localScale;
@@ -69,12 +71,12 @@ public class BottomMenuButtonV2 : MonoBehaviour, IPointerEnterHandler, IPointerE
     private void DisplayInfoPanel()
     {
         infoPanel.SetActive(true);
-
+        infoPanel.GetComponent<InformationPanel>().SetDisplayedInformations(uiAssignedBuilding);
     }
 
     private void EmptyAndHideInfoPanel()
     {
+        infoPanel.GetComponent<InformationPanel>().EmptyDisplayedInformations();
         infoPanel.SetActive(false);
-
     }
 }
