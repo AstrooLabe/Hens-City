@@ -6,7 +6,9 @@ using UnityEngine.UI;
 
 public class MenuButtonAnimations : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, IPointerExitHandler
 {
+    [SerializeField]
     private Transform foregroundButtonSprite;
+    [SerializeField]
     private TextMeshProUGUI buttonText;
     private float extendSpeed = 10f/60f;
     private Color32 greyText = new Color32(102, 102, 102, 255);
