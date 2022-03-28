@@ -7,4 +7,6 @@ public class OptionsObject
 {
     public float musicVolume = 1;
     public float sfxVolume = 1;
+    public int targetFPS = 30;
+
 }
