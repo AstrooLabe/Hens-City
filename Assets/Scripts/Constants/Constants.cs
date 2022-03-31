@@ -23,3 +23,17 @@ public class Dimensions : MonoBehaviour
 {
     public const int pointEspacement = 4;
 }
+
+public class Options : MonoBehaviour
+{
+    public const string FULLSCREEN = "Fullscreen";
+    public const string BORDERLESS = "Borderless";
+    public const string WINDOWED = "Windowed";
+
+    public const int THIRTY_FPS = 30;
+    public const int SIXTY_FPS = 60;
+    public const int HUNDRED_TWENTY_FPS = 120;
+
+    public const string FRENCH = "Français";
+    public const string ENGLISH = "English";
+}

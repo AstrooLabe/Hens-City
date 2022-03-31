@@ -8,8 +8,11 @@ public class OptionsMenu : MonoBehaviour
 {
     [SerializeField]
     GameObject optionsMenu;
+    [SerializeField]
+    GameObject audioMenu;
 
-    OptionsObject options = new OptionsObject();
+    private OptionsObject options = new OptionsObject();
+    private bool subMenuDisplayed = false;
 
     private void Start()
     {
@@ -31,7 +34,7 @@ public class OptionsMenu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Cancel"))
+        if (Input.GetButtonDown("Cancel") && !subMenuDisplayed)
         {
             HideMenu();
         }
@@ -49,8 +52,17 @@ public class OptionsMenu : MonoBehaviour
         foreach (MenuButtonAnimations button in transform.GetComponentsInChildren<MenuButtonAnimations>())
         {
             button.ResetAnimation();
-        } 
+        }
     }
 
+    public void OpenAudio()
+    {
+        subMenuDisplayed = true;
+        audioMenu.SetActive(true);
+    }
 
+    public void SubMenuClosed()
+    {
+        subMenuDisplayed = false;
+    }
 }
