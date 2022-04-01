@@ -11,25 +11,11 @@ public class OptionsMenu : MonoBehaviour
     [SerializeField]
     GameObject audioMenu;
 
-    private OptionsObject options = new OptionsObject();
     private bool subMenuDisplayed = false;
 
     private void Start()
     {
-        if (File.Exists(Application.persistentDataPath + "/options.sav"))
-        {
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/options.sav", FileMode.Open);
-            options = (OptionsObject)bf.Deserialize(file);
-            file.Close();
-        }
-        else
-        {
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Create(Application.persistentDataPath + "/options.sav");
-            bf.Serialize(file, options);
-            file.Close();
-        }
+
     }
 
     private void Update()

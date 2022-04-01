@@ -10,12 +10,14 @@ public class AudioMenu : MonoBehaviour
     [SerializeField]
     private TMP_Text sfx;
 
-    private int musicVolume = 10;
-    private int sfxVolume = 10;
+    [SerializeField]
+    OptionsManager optionsManager;
+
 
     void Start()
     {
-        
+        music.text = "Music : " + optionsManager.GetMusicVolume().ToString();
+        sfx.text = "SFX : " + optionsManager.GetSFXVolume().ToString();
     }
 
     void Update()
@@ -29,37 +31,37 @@ public class AudioMenu : MonoBehaviour
 
     public void IncreaseMusicVolume()
     {
-        if(musicVolume < 10)
+        if(optionsManager.GetMusicVolume() < 10)
         {
-            musicVolume++;
-            music.text = "Music : " + musicVolume.ToString();
+            optionsManager.ApplyNewMusicVolume(optionsManager.GetMusicVolume()+1);
+            music.text = "Music : " + optionsManager.GetMusicVolume().ToString();
         }
     }
 
     public void DecreaseMusicVolume()
     {
-        if (musicVolume > 0)
+        if (optionsManager.GetMusicVolume() > 0)
         {
-            musicVolume--;
-            music.text = "Music : " + musicVolume.ToString();
+            optionsManager.ApplyNewMusicVolume(optionsManager.GetMusicVolume()-1);
+            music.text = "Music : " + optionsManager.GetMusicVolume().ToString();
         }
     }
 
     public void IncreaseSFXVolume()
     {
-        if (sfxVolume < 10)
+        if (optionsManager.GetSFXVolume() < 10)
         {
-            sfxVolume++;
-            sfx.text = "SFX : " + sfxVolume.ToString();
+            optionsManager.ApplyNewSFXVolume(optionsManager.GetSFXVolume()+1);
+            sfx.text = "SFX : " + optionsManager.GetSFXVolume().ToString();
         }
     }
 
     public void DecreaseSFXVolume()
     {
-        if (sfxVolume > 0)
+        if (optionsManager.GetSFXVolume() > 0)
         {
-            sfxVolume--;
-            sfx.text = "SFX : " + sfxVolume.ToString();
+            optionsManager.ApplyNewSFXVolume(optionsManager.GetSFXVolume()-1);
+            sfx.text = "SFX : " + optionsManager.GetSFXVolume().ToString();
         }
     }
 }
