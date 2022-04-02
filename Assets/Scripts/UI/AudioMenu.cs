@@ -22,7 +22,7 @@ public class AudioMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Cancel"))
+        if (Input.GetButtonDown("Cancel") || Input.GetButtonUp("Cancel Road"))
         {
             FindObjectOfType<OptionsMenu>().SubMenuClosed();
             gameObject.SetActive(false);

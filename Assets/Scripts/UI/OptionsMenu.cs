@@ -20,7 +20,7 @@ public class OptionsMenu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Cancel") && !subMenuDisplayed)
+        if ((Input.GetButtonDown("Cancel") || Input.GetButtonUp("Cancel Road")) && !subMenuDisplayed)
         {
             HideMenu();
         }

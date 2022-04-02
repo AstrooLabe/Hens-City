@@ -10,6 +10,7 @@ public class AssetPlacer : MonoBehaviour
     private CustomGrid grid;
     private GameObject selectedBuilding;
     private GameObject instantiatedBuilding;
+    List<GameObject> roadsToDisplay = new List<GameObject>();
     private Vector3 buildingPositionOffset;
     [SerializeField]
     private GameObject buildingGrid;
@@ -60,6 +61,16 @@ public class AssetPlacer : MonoBehaviour
     {
         if (isABuildingSelected && !hasCameraMoved)
         {
+            if (selectedBuilding.GetComponent<GenericBuilding>().GetBuildingType() == Categories.ROADS)
+            {
+                StopCoroutine("PlaceInstantiatedRoad");
+                roadsToDisplay.ForEach(road => { DestroyImmediate(road); });
+            }
+            else
+            {
+                StopCoroutine("PlaceDisplayedBuildingNear");
+                StopCoroutine("PlaceInstantiatedBuilding");
+            }
             DestroyImmediate(instantiatedBuilding.gameObject, true);
             buildingPositionOffset = Vector3.zero;
             isABuildingSelected = false;
@@ -119,7 +130,7 @@ public class AssetPlacer : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
             {
-                List<GameObject> roadsToDisplay = new List<GameObject>();
+                roadsToDisplay = new List<GameObject>();
                 Vector3 delta = Vector3.zero;
 
                 bool isConstructible = false;
