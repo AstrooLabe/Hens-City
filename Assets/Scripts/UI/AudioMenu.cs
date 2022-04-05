@@ -13,7 +13,6 @@ public class AudioMenu : MonoBehaviour
     [SerializeField]
     OptionsManager optionsManager;
 
-
     void Start()
     {
         music.text = "Music : " + optionsManager.GetMusicVolume().ToString();

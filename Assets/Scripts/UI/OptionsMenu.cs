@@ -10,6 +10,12 @@ public class OptionsMenu : MonoBehaviour
     GameObject optionsMenu;
     [SerializeField]
     GameObject audioMenu;
+    [SerializeField]
+    GameObject controlsMenu;
+    [SerializeField]
+    GameObject languageMenu;
+    [SerializeField]
+    GameObject graphicsMenu;
 
     private bool subMenuDisplayed = false;
 
@@ -45,6 +51,24 @@ public class OptionsMenu : MonoBehaviour
     {
         subMenuDisplayed = true;
         audioMenu.SetActive(true);
+    }
+
+    public void OpenGraphics()
+    {
+        subMenuDisplayed = true;
+        graphicsMenu.SetActive(true);
+    }
+
+    public void OpenControls()
+    {
+        subMenuDisplayed = true;
+        controlsMenu.SetActive(true);
+    }
+
+    public void OpenLanguages()
+    {
+        subMenuDisplayed = true;
+        languageMenu.SetActive(true);
     }
 
     public void SubMenuClosed()
