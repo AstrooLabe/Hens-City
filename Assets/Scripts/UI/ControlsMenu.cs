@@ -10,7 +10,7 @@ public class ControlsMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        //Load settings
     }
 
     // Update is called once per frame

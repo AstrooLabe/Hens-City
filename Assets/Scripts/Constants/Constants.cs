@@ -27,13 +27,13 @@ public class Dimensions : MonoBehaviour
 public class Options : MonoBehaviour
 {
     public const string FULLSCREEN = "Fullscreen";
-    public const string BORDERLESS = "Borderless";
+    public const string BORDERLESS = "Borderless Windowed";
     public const string WINDOWED = "Windowed";
 
     public const int THIRTY_FPS = 30;
     public const int SIXTY_FPS = 60;
     public const int HUNDRED_TWENTY_FPS = 120;
 
-    public const string FRENCH = "Français";
-    public const string ENGLISH = "English";
+    public const string FRENCH = "FR-fr";
+    public const string ENGLISH = "EN-en";
 }

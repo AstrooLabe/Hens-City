@@ -32,7 +32,7 @@ public class AudioMenu : MonoBehaviour
     {
         if(optionsManager.GetMusicVolume() < 10)
         {
-            optionsManager.ApplyNewMusicVolume(optionsManager.GetMusicVolume()+1);
+            optionsManager.ApplyNewMusicVolume(optionsManager.GetMusicVolume()+1, false);
             music.text = "Music : " + optionsManager.GetMusicVolume().ToString();
         }
     }
@@ -41,7 +41,7 @@ public class AudioMenu : MonoBehaviour
     {
         if (optionsManager.GetMusicVolume() > 0)
         {
-            optionsManager.ApplyNewMusicVolume(optionsManager.GetMusicVolume()-1);
+            optionsManager.ApplyNewMusicVolume(optionsManager.GetMusicVolume()-1, false);
             music.text = "Music : " + optionsManager.GetMusicVolume().ToString();
         }
     }
@@ -50,7 +50,7 @@ public class AudioMenu : MonoBehaviour
     {
         if (optionsManager.GetSFXVolume() < 10)
         {
-            optionsManager.ApplyNewSFXVolume(optionsManager.GetSFXVolume()+1);
+            optionsManager.ApplyNewSFXVolume(optionsManager.GetSFXVolume()+1, false);
             sfx.text = "SFX : " + optionsManager.GetSFXVolume().ToString();
         }
     }
@@ -59,7 +59,7 @@ public class AudioMenu : MonoBehaviour
     {
         if (optionsManager.GetSFXVolume() > 0)
         {
-            optionsManager.ApplyNewSFXVolume(optionsManager.GetSFXVolume()-1);
+            optionsManager.ApplyNewSFXVolume(optionsManager.GetSFXVolume()-1, false);
             sfx.text = "SFX : " + optionsManager.GetSFXVolume().ToString();
         }
     }
