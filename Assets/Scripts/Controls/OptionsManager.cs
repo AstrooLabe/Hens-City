@@ -108,6 +108,8 @@ public class OptionsManager : MonoBehaviour
         optionsObject.vSync = value;
         if (optionsObject.vSync)
             QualitySettings.vSyncCount = maxRefreshRate/optionsObject.targetFPS;
+        else
+            QualitySettings.vSyncCount = 0;
         if (!isStartUp) SaveOptionsFile();
     }
 
@@ -144,6 +146,8 @@ public class OptionsManager : MonoBehaviour
         }
         if (optionsObject.vSync)
             QualitySettings.vSyncCount = maxRefreshRate / optionsObject.targetFPS;
+        else
+            QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = optionsObject.targetFPS;
     }
 
