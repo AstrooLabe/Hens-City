@@ -2335,13 +2335,7 @@ MonoBehaviour:
   m_ItemImage: {fileID: 0}
   m_Value: 0
   m_Options:
-    m_Options:
-    - m_Text: 30
-      m_Image: {fileID: 0}
-    - m_Text: 60
-      m_Image: {fileID: 0}
-    - m_Text: 75
-      m_Image: {fileID: 0}
+    m_Options: []
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3925,7 +3919,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: target fps
+  m_text: Framerate
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ac0d1592f1dec384e931228f45978fd5, type: 2}
   m_sharedMaterial: {fileID: 8513551085034876564, guid: ac0d1592f1dec384e931228f45978fd5,
@@ -11471,6 +11465,7 @@ MonoBehaviour:
   optionsManager: {fileID: 1587137781}
   vSyncToggle: {fileID: 1374282273}
   screenModeDropdown: {fileID: 20534801}
+  frameratesDropdown: {fileID: 404077670}
 --- !u!1 &1823479658
 GameObject:
   m_ObjectHideFlags: 0

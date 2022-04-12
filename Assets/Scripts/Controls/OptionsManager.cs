@@ -13,8 +13,27 @@ public class OptionsManager : MonoBehaviour
     [SerializeField]
     private AudioSource sfxSource;
 
+    private int maxRefreshRate = 0;
+
     void Start()
     {
+        List<int> refreshRates = new List<int>();
+        Resolution[] possibleResolutions = Screen.resolutions;
+        foreach (Resolution resolution in possibleResolutions)
+        {
+            if (refreshRates.Count == 0)
+                if (resolution.refreshRate % 5 == 0)
+                {
+                    if (!refreshRates.Exists(rate => rate == resolution.refreshRate))
+                    {
+                        refreshRates.Add(resolution.refreshRate);
+                    }
+                }
+        }
+        refreshRates.Sort();
+
+        maxRefreshRate = refreshRates[refreshRates.Count - 1];
+
         if (!File.Exists(Application.persistentDataPath + "/options.cfg"))
         {
             SaveOptionsFile();
@@ -51,7 +70,7 @@ public class OptionsManager : MonoBehaviour
     {
         optionsObject.musicVolume = newVolume;
         musicSource.volume = (float)newVolume / 10;
-        if(!isStartUp) SaveOptionsFile();
+        if (!isStartUp) SaveOptionsFile();
     }
 
     public int GetMusicVolume()
@@ -84,11 +103,11 @@ public class OptionsManager : MonoBehaviour
         return optionsObject.selectedLanguage;
     }
 
-    public void SetVSync(bool isStartUp)
+    public void SetVSync(bool value, bool isStartUp)
     {
-        optionsObject.vSync = !optionsObject.vSync;
-
-        QualitySettings.vSyncCount = optionsObject.vSync == true ? 1 : 0;
+        optionsObject.vSync = value;
+        if (optionsObject.vSync)
+            QualitySettings.vSyncCount = maxRefreshRate/optionsObject.targetFPS;
         if (!isStartUp) SaveOptionsFile();
     }
 
@@ -99,28 +118,45 @@ public class OptionsManager : MonoBehaviour
 
     public void SetScreenMode(string newMode, bool isStartUp)
     {
-        switch (newMode)
-        {
-            case Options.FULLSCREEN:
-                optionsObject.screen = newMode;
-                Screen.SetResolution(1920, 1080,FullScreenMode.ExclusiveFullScreen);
-                break;
-            case Options.BORDERLESS:
-                optionsObject.screen = newMode;
-                Screen.SetResolution(1920, 1080, FullScreenMode.FullScreenWindow);
-                break;
-            case Options.WINDOWED:
-                optionsObject.screen = newMode;
-                Screen.SetResolution(800, 600, false);
-                //Screen.fullScreenMode = FullScreenMode.Windowed;
-                break;
-        }
+        optionsObject.screen = newMode;
         if (!isStartUp) SaveOptionsFile();
+        ApplyGraphicsSettings();
     }
 
     public string GetScreenMode()
     {
         return optionsObject.screen;
+    }
+
+    public void ApplyGraphicsSettings()
+    {
+        switch (optionsObject.screen)
+        {
+            case Options.FULLSCREEN:
+                Screen.SetResolution(1920, 1080, FullScreenMode.ExclusiveFullScreen);
+                break;
+            case Options.BORDERLESS:
+                Screen.SetResolution(1920, 1080, FullScreenMode.FullScreenWindow);
+                break;
+            case Options.WINDOWED:
+                Screen.SetResolution(1920, 1080, false);
+                break;
+        }
+        if (optionsObject.vSync)
+            QualitySettings.vSyncCount = maxRefreshRate / optionsObject.targetFPS;
+        Application.targetFrameRate = optionsObject.targetFPS;
+    }
+
+    public void SetFramerate(int framerate, bool isStartUp)
+    {
+        optionsObject.targetFPS = framerate;
+        Application.targetFrameRate = framerate;
+        if (!isStartUp) SaveOptionsFile();
+    }
+
+    public int GetFramerate()
+    {
+        return optionsObject.targetFPS;
     }
 
 }

@@ -8,7 +8,7 @@ public class OptionsObject
     public int musicVolume = 10;
     public int sfxVolume = 10;
 
-    public int targetFPS = Options.THIRTY_FPS;
+    public int targetFPS = Options.SIXTY_FPS;
     public bool vSync = false;
     public string screen = Options.FULLSCREEN;
 
