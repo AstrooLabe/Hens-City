@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        Application.targetFrameRate = 60;
         buildingsDatabase = JsonUtility.FromJson<BuildingListObject>(Resources.Load<TextAsset>("JSON_Data/BuildingList").text);
         uiBuildingsDatabase = JsonUtility.FromJson<UIBuildingListObject>(Resources.Load<TextAsset>("JSON_Data/UIBuildingList").text);
 

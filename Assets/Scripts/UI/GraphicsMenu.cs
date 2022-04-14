@@ -16,37 +16,25 @@ public class GraphicsMenu : MonoBehaviour
     private TMP_Dropdown screenModeDropdown;
     [SerializeField]
     private TMP_Dropdown frameratesDropdown;
+    [SerializeField]
+    private TMP_Dropdown resolutionssDropdown;
+
+    private GeneralUtils utils = new GeneralUtils();
 
     // Start is called before the first frame update
     void Start()
     {
         //Load settings
 
-        List<string> refreshRates = new List<string>();
-        Resolution[] possibleResolutions = Screen.resolutions;
-
-        foreach (Resolution resolution in possibleResolutions)
-        {
-            if (refreshRates.Count == 0)
-                refreshRates.Add("30");
-
-            if (resolution.refreshRate % 5 == 0)
-            {
-                if (!refreshRates.Exists(rate => rate == resolution.refreshRate.ToString()))
-                {
-                    refreshRates.Add(resolution.refreshRate.ToString());
-                }
-            }
-        }
-
-        refreshRates.Sort();
-
         frameratesDropdown.ClearOptions();
-        frameratesDropdown.AddOptions(refreshRates);
+        frameratesDropdown.AddOptions(utils.GetAllPossibleRefreshRatesString());
+        resolutionssDropdown.ClearOptions();
+        resolutionssDropdown.AddOptions(utils.GetAllPossibleResolutionsString());
         vSyncToggle.isOn = optionsManager.GetVSync();
 
         screenModeDropdown.value = screenModeDropdown.options.FindIndex(option => { return option.text == optionsManager.GetScreenMode(); });
         frameratesDropdown.value = frameratesDropdown.options.FindIndex(option => { return option.text == optionsManager.GetFramerate().ToString(); });
+        resolutionssDropdown.value = resolutionssDropdown.options.FindIndex(option => { return option.text == optionsManager.GetResolution().displayRes; });
     }
 
     private void OnEnable()
@@ -76,5 +64,13 @@ public class GraphicsMenu : MonoBehaviour
     public void SetFramerate()
     {
         optionsManager.SetFramerate(int.Parse(frameratesDropdown.options[frameratesDropdown.value].text), false);
+    }
+
+    public void SetResolution()
+    {
+        CustomResolution resToSet = utils.GetAllPossibleResolutions().Find(res => res.displayRes == resolutionssDropdown.options[resolutionssDropdown.value].text);
+
+        optionsManager.SetResolution(resToSet.width, resToSet.height, false);
+
     }
 }

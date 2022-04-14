@@ -14,28 +14,24 @@ public class OptionsManager : MonoBehaviour
     private AudioSource sfxSource;
 
     private int maxRefreshRate = 0;
+    private GeneralUtils utils = new GeneralUtils();
 
     void Start()
     {
-        List<int> refreshRates = new List<int>();
-        Resolution[] possibleResolutions = Screen.resolutions;
-        foreach (Resolution resolution in possibleResolutions)
-        {
-            if (refreshRates.Count == 0)
-                if (resolution.refreshRate % 5 == 0)
-                {
-                    if (!refreshRates.Exists(rate => rate == resolution.refreshRate))
-                    {
-                        refreshRates.Add(resolution.refreshRate);
-                    }
-                }
-        }
-        refreshRates.Sort();
+        List<int> refreshRates = utils.GetAllPossibleRefreshRates();
 
         maxRefreshRate = refreshRates[refreshRates.Count - 1];
 
         if (!File.Exists(Application.persistentDataPath + "/options.cfg"))
         {
+            optionsObject.targetFPS = utils.GetAllPossibleRefreshRates()[utils.GetAllPossibleRefreshRates().Count - 1];
+
+            List<CustomResolution> resList;
+            resList = utils.GetAllPossibleResolutions();
+
+            optionsObject.width = resList[resList.Count - 1].width;
+            optionsObject.height = resList[resList.Count - 1].height;
+
             SaveOptionsFile();
         }
         LoadOptions();
@@ -135,13 +131,13 @@ public class OptionsManager : MonoBehaviour
         switch (optionsObject.screen)
         {
             case Options.FULLSCREEN:
-                Screen.SetResolution(1920, 1080, FullScreenMode.ExclusiveFullScreen);
+                Screen.SetResolution(optionsObject.width, optionsObject.height, FullScreenMode.ExclusiveFullScreen);
                 break;
             case Options.BORDERLESS:
-                Screen.SetResolution(1920, 1080, FullScreenMode.FullScreenWindow);
+                Screen.SetResolution(optionsObject.width, optionsObject.height, FullScreenMode.FullScreenWindow);
                 break;
             case Options.WINDOWED:
-                Screen.SetResolution(1920, 1080, false);
+                Screen.SetResolution(optionsObject.width, optionsObject.height, false);
                 break;
         }
         if (optionsObject.vSync)
@@ -161,6 +157,20 @@ public class OptionsManager : MonoBehaviour
     public int GetFramerate()
     {
         return optionsObject.targetFPS;
+    }
+
+    public void SetResolution(int width, int height, bool isStartUp)
+    {
+        optionsObject.width = width;
+        optionsObject.height = height;
+        if (!isStartUp) SaveOptionsFile();
+        ApplyGraphicsSettings();
+    }
+
+    public CustomResolution GetResolution()
+    {
+        CustomResolution res = new CustomResolution(optionsObject.width, optionsObject.height);
+        return res;
     }
 
 }

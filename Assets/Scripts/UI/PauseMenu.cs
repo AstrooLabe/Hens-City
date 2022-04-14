@@ -12,6 +12,8 @@ public class PauseMenu : MonoBehaviour
     private GameObject saveGameButton;
     [SerializeField]
     private GameObject quitGameButton;
+    [SerializeField]
+    private GameObject optionsMenu;
     private Transform noSavePopup;
 
     private bool menuEnabled = false;
@@ -55,6 +57,11 @@ public class PauseMenu : MonoBehaviour
             saveGameButton.GetComponent<Button>().interactable = false;
             quitGameButton.GetComponent<Button>().interactable = false;
         }
+    }
+
+    public void OpenOptions()
+    {
+        optionsMenu.SetActive(true);
     }
 
     public void QuitGame()
